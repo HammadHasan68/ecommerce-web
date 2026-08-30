@@ -1,0 +1,12 @@
+import mongoose from "mongoose";
+
+const schema = new mongoose.Schema({
+    title: String,
+    description: String,
+    price: Number,
+    category: String,
+    image: String,
+    embedding: [Number]
+});
+    
+export default mongoose.models.Product || mongoose.model("Product", schema);

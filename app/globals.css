@@ -1,0 +1,42 @@
+@import "tailwindcss";
+
+:root {
+  --background: #050507;
+  --foreground: #f8fafc;
+}
+
+@theme inline {
+  --color-background: var(--background);
+  --color-foreground: var(--foreground);
+  --font-sans: var(--font-geist-sans);
+  --font-mono: var(--font-geist-mono);
+}
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  background: var(--background);
+  color: var(--foreground);
+  font-family: var(--font-geist-sans), sans-serif;
+  background-image: radial-gradient(circle at 15% 0%, rgba(124, 58, 237, 0.14), transparent 32rem), radial-gradient(circle at 90% 28%, rgba(139, 92, 246, 0.08), transparent 28rem);
+}
+
+::selection {
+  background: #8b5cf6;
+  color: #f8fafc;
+}
+
+@keyframes fade-up {
+  from { opacity: 0; transform: translateY(12px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  *, *::before, *::after {
+    scroll-behavior: auto !important;
+    transition-duration: 0.01ms !important;
+    animation-duration: 0.01ms !important;
+  }
+}
